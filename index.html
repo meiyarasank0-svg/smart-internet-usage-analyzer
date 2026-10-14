@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Internet Usage Analyzer</title>
+
+    <link rel="stylesheet" href="/style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header>
+
+        <div class="logo">
+            Smart Internet Usage Analyzer
+        </div>
+
+
+        <nav>
+
+            <a href="#home">Home</a>
+
+            <a href="#analyzer">Analyzer</a>
+
+            <a href="#report">Report</a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =========================
+         HOME
+    ========================== -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h1>
+                Smart Internet Usage Analyzer
+            </h1>
+
+
+            <p>
+                Monitor your laptop's internet usage automatically
+                and understand your network activity through a
+                simple and smart dashboard.
+            </p>
+
+
+            <button onclick="openAnalyzer()">
+
+                Start Analyzing
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         ANALYZER
+    ========================== -->
+
+    <section class="analyzer-section"
+        id="analyzer">
+
+
+        <h2>
+            Internet Usage Analyzer
+        </h2>
+
+
+        <p class="section-text">
+
+            Start the analyzer to monitor
+            your network activity in real time.
+
+        </p>
+
+
+
+        <!-- START / STOP -->
+
+        <div class="analyzer-buttons">
+
+
+            <button
+                class="start-button"
+                onclick="startAnalyzing()"
+                id="startBtn">
+
+                ▶ Start Analyzing
+
+            </button>
+
+
+
+            <button
+                class="stop-button"
+                onclick="stopAnalyzing()"
+                id="stopBtn"
+                disabled>
+
+                ■ Stop Analyzing
+
+            </button>
+
+
+        </div>
+
+
+
+        <!-- STATUS -->
+
+        <div class="status-box">
+
+
+            <span
+                class="status-dot"
+                id="statusDot">
+            </span>
+
+
+            <span id="connectionStatus">
+
+                Analyzer Stopped
+
+            </span>
+
+
+        </div>
+
+
+
+        <!-- =========================
+             SUMMARY CARDS
+        ========================== -->
+
+        <div class="summary">
+
+
+            <div class="summary-card">
+
+                <h3>
+                    Download Data
+                </h3>
+
+                <p id="downloadData">
+                    0 MB
+                </p>
+
+            </div>
+
+
+
+            <div class="summary-card">
+
+                <h3>
+                    Upload Data
+                </h3>
+
+                <p id="uploadData">
+                    0 MB
+                </p>
+
+            </div>
+
+
+
+            <div class="summary-card">
+
+                <h3>
+                    Total Data
+                </h3>
+
+                <p id="totalData">
+                    0 MB
+                </p>
+
+            </div>
+
+
+
+            <div class="summary-card">
+
+                <h3>
+                    Monitoring Time
+                </h3>
+
+                <p id="totalTime">
+                    0 Minutes
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =========================
+             SPEED MONITOR
+        ========================== -->
+
+        <div class="speed-box">
+
+            <h2>
+                Real-Time Internet Speed
+            </h2>
+
+
+            <div class="speed-container">
+
+
+                <div class="speed-card">
+
+                    <h3>
+                        Download Speed
+                    </h3>
+
+                    <p id="downloadSpeed">
+                        0 KB/s
+                    </p>
+
+                </div>
+
+
+
+                <div class="speed-card">
+
+                    <h3>
+                        Upload Speed
+                    </h3>
+
+                    <p id="uploadSpeed">
+                        0 KB/s
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =========================
+             USAGE GRAPH
+        ========================== -->
+
+        <div class="graph-box">
+
+            <h2>
+                Real-Time Usage Graph
+            </h2>
+
+
+            <p>
+                Total internet data usage over time
+            </p>
+
+
+            <canvas id="usageChart"></canvas>
+
+        </div>
+
+
+
+        <!-- =========================
+             DATA ALERT
+        ========================== -->
+
+        <div class="alert-box"
+            id="alertBox">
+
+            <h2>
+                Data Usage Alert
+            </h2>
+
+
+            <p id="alertMessage">
+
+                Start the analyzer to monitor
+                your data usage.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- =========================
+             NETWORK ACTIVITY
+        ========================== -->
+
+        <div class="network-box">
+
+
+            <h2>
+                Network Activity
+            </h2>
+
+
+            <p id="networkMessage">
+
+                Analyzer is currently stopped.
+
+            </p>
+
+
+            <button
+                onclick="getUsage()"
+                id="refreshBtn"
+                disabled>
+
+                Refresh Now
+
+            </button>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         REPORT
+    ========================== -->
+
+    <section class="report-section"
+        id="report">
+
+
+        <h2>
+            Usage Report
+        </h2>
+
+
+        <div class="report-box">
+
+
+            <p id="reportMessage">
+
+                Start the analyzer to generate
+                your internet usage report.
+
+            </p>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <p>
+            Smart Internet Usage Analyzer
+        </p>
+
+    </footer>
+
+
+
+    <script src="/script.js"></script>
+
+</body>
+
+</html>
